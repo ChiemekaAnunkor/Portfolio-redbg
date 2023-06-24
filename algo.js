@@ -1700,87 +1700,78 @@ class Trie {
 // console.log(test.searchWord(["pea", "word"]))
 
 
-var MedianFinder = function () {
+// var MedianFinder = function () {
 
-    this.array = []
-
-
-};
-
-/** 
- * @param {number} num
- * @return {void}
- */
-MedianFinder.prototype.addNum = function (num) {
-    if (this.array[0] == undefined) {
-        this.array.push(num)
-        return
-    }
+//     this.array = []
 
 
-    if (num < this.array[0]) {
+// };
 
-        this.array.unshift(num)
-        return
-    }
-    if (num > this.array[this.array.length - 1]) {
-
-        this.array.push(num)
-        return
-    }
-    let count = 0
-    let insert = false
-    while (insert !== true) {
-        // console.log(this.array[count])
-        if (num < this.array[count]) {
-            this.array.splice(count, 0, num)
-            insert = true
-        }
-        count++
+// /** 
+//  * @param {number} num
+//  * @return {void}
+//  */
+// MedianFinder.prototype.addNum = function (num) {
+//     if (this.array[0] == undefined) {
+//         this.array.push(num)
+//         return
+//     }
 
 
-    }
+//     if (num < this.array[0]) {
 
+//         this.array.unshift(num)
+//         return
+//     }
+//     if (num > this.array[this.array.length - 1]) {
 
+//         this.array.push(num)
+//         return
+//     }
+//     let count = 0
+//     let insert = false
+//     while (insert !== true) {
+//         // console.log(this.array[count])
+//         if (num < this.array[count]) {
+//             this.array.splice(count, 0, num)
+//             insert = true
+//         }
+//         count++
+//     }
 
+// };
 
-};
+// /**
+//  * @return {number}
+//  */
+// MedianFinder.prototype.findMedian = function () {
+//     // let median = (this.array.length) / 2
+//     // if (this.array.length % 3 == 0) {
 
-/**
- * @return {number}
- */
-MedianFinder.prototype.findMedian = function () {
-    let median = (this.array.length) / 2
-    if (this.array.length % 3 == 0) {
-
-        median = median - 0.5
-    } else {
-        median = median + 0.5
-    }
-    console.log(median)
-    let result = this.array[median]
-    if (!result) {
-        return median
-    }
-    return result
-
-};
-
-
-let me = new MedianFinder()
+//     //     median = median - 0.5
+//     // } else {
+//     //     median = median + 0.5
+//     // }
+//     // let result = this.array[median]
+//     // if (!result) {
+//     //     return median
+//     // }
+//     // return result
 
 
 
 
 
-me.addNum(1)
-me.addNum(2)
-me.addNum(3)
+// };
 
+// let me = new MedianFinder()
 
+// me.addNum(1)
+// me.addNum(2)
+// me.addNum(3)
 
-console.log(me.findMedian()
-)
+// console.log(me.findMedian()
+// )
 
 
 
@@ -1789,4 +1780,145 @@ console.log(me.findMedian()
 
 
 
-console.log(me)
+// console.log(me)
+
+
+
+
+
+
+// var combinationSum = function (candidates, target) {
+//     let result = []
+
+//     function dfs(index, current, arr) {
+
+//         if (current < 0) return
+//         if (current === 0) {
+//             result.push([...arr])
+//         }
+
+//         for (let i = index; i < candidates.length; i++) {
+//             arr.push(candidates[i])
+//             dfs(i, current - candidates[i], arr)
+//             arr.pop()
+//         }
+//     }
+
+//     dfs(0, target, [])
+
+//     return result
+// };
+
+// console.log(combinationSum([2, 3, 6, 7], 7))
+
+
+// class Graph {
+//     constructor(char, left, right) {
+//         this.char = char
+//         this.left = left
+//         this.right = right
+//     }
+// }
+
+// class Container {
+//     constructor() {
+//         this.arr = []
+//     }
+//     insert(char, left, right) {
+//         this.arr.push(new Graph(char, left, right))
+//     }
+
+//     remove(char) {
+//         this.arr.shift()
+//     }
+// }
+
+// let c1 = new Container()
+// c1.insert("A", 0, 0)
+// c1.insert("B", 1, 0)
+
+
+
+
+// var exist = function (board, word) {
+//     let words = word.split("")
+//     let startLetter = words[0]
+//     let startP = new Container()
+
+//     let position = board[0][0]
+//     for (let i = 0; i < board.length; i++) {
+//         let curr = board[i].indexOf(startLetter)
+//         if (curr !== -1) {
+//             startP.insert(startLetter, i, curr)
+//         }
+//     }
+
+//     if (!startP.arr[0]) {
+//         return false
+//     }
+
+//     let checked = []
+//     let trail = []
+//     let path = new Graph(startP.arr[0].char, startP.arr[0].left, startP.arr[0].right)
+//     trail.push(path)
+
+//     // while (startP.arr[0]) {
+//     let left = startP.arr[0].left
+//     let right = startP.arr[0].right
+//     let curr = board[left][right]
+//     console.log(trail)
+//     let LeftpathCheck = board[left][right - 1]
+//     let RightPathCheck = board[left][right + 1]
+
+//     let TopPathCheck = board[left - 1][right]
+//     if (board[left - 1]) {
+
+//     }
+
+
+//     let BottomPathCheck = board[left + 1][right]
+
+
+
+
+
+//     // }
+
+
+
+// };
+
+// console.log(exist([["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]], "ABCCED"))
+
+const airpot = 'phx atx dtx lax den aug sjc sfo'.split(" ")
+const routes = [['phx', 'atx'], ['dtx', 'sfo'], ['lax', 'sfo'], ['den', 'sjc'], ['sfo', 'aug'], ['sjc', 'aug']]
+
+const adjacncylist = new Map()
+
+
+const addNode = (airpot) => {
+
+    adjacncylist.set(airpot, [])
+
+}
+
+const addEdge = (origin, destination) => {
+    adjacncylist.get(origin).push(destination)
+    adjacncylist.get(destination).push(origin)
+}
+
+airpot.forEach(addNode)
+routes.forEach(routes => addEdge(...routes))
+
+console.log(adjacncylist)
+
+
+
+const bsf = (data){
+
+    const queue = [data]
+
+}
+
+
+console.log(bsf(adjacncylist))
